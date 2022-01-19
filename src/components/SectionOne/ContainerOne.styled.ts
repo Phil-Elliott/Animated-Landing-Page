@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const MainContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.main};
-  padding-top: 2.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 6%;
   width: 100%;
 
   & h1 {
@@ -18,9 +19,18 @@ export const MainContainer = styled.div`
   }
 `
 
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  @media only screen and (max-width: 1525px) {
+    grid-template-columns: 1fr;
+  }
+`
+
 export const HeaderContainer = styled.div`
   width: 100%;
-  margin-top: max(10vh, 8rem);
+  margin-top: min(20%, 8rem);
 `
 
 export const Logo = styled.img``
@@ -32,29 +42,63 @@ export const ArrowRight = styled.img`
 `
 
 export const PhoneContainer = styled.div`
-  position: relative;
-
-  @media only screen and (max-width: 1000px) {
+  margin-top: 3rem;
+  @media only screen and (max-width: 1525px) {
     display: none;
   }
 `
 
 export const Phone = styled.img`
+  position: absolute;
   margin-left: 2rem;
   z-index: 2;
 `
 
 export const Shadow = styled.img`
   position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 0;
+  margin: -2rem 0 0 -6rem;
+  z-index: 1;
 `
 
-export const CarContainer = styled.div``
+export const CarContainer = styled.div`
+  position: relative;
+  margin-bottom: 8%;
 
-export const LeftCar = styled.img``
+  @media only screen and (max-width: 1525px) {
+    margin-bottom: 17%;
+  }
+`
 
-export const RightCar = styled.img``
+export const LeftCar = styled.img`
+  position: absolute;
+  margin-top: 4%;
+  width: clamp(25%, 30%, 45%);
 
-export const CenterCar = styled.img``
+  @media only screen and (max-width: 1525px) {
+    margin-top: 8%;
+    width: clamp(25%, 42%, 45%);
+  }
+`
+
+export const RightCar = styled.img`
+  position: absolute;
+  margin: 8% 0 0 26%;
+  width: clamp(35%, 40%, 45%);
+
+  @media only screen and (max-width: 1525px) {
+    margin: 14% 0 0 50%;
+    width: clamp(25%, 55%, 55%);
+  }
+`
+
+export const CenterCar = styled.img`
+  position: absolute;
+  margin: 8% 0 0 6%;
+  width: clamp(40%, 45%, 50%);
+  z-index: 10;
+
+  @media only screen and (max-width: 1525px) {
+    margin: 14% 0 0 16%;
+    width: clamp(25%, 65%, 65%);
+  }
+`

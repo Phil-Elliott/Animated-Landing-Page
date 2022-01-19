@@ -2,6 +2,8 @@ import React from "react"
 import { ThemeProvider } from "styled-components"
 import GlobalStyles from "./components/styles/Global"
 import SectionOne from "./components/SectionOne/SectionOne"
+import SectionTwo from "./components/SectionTwo/SectionTwo"
+import { MainContainer } from "./components/styles/Container.styled"
 
 const theme = {
   colors: {
@@ -18,8 +20,11 @@ const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <SectionOne />
+      <MainContainer>
+        <GlobalStyles />
+        <SectionOne />
+        <SectionTwo />
+      </MainContainer>
     </ThemeProvider>
   )
 }

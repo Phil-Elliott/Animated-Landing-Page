@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react"
 import { Flex } from "../styles/Flex.styled"
-import { Grid } from "../styles/Grid.styled"
 import { Container } from "../styles/Container.styled"
 import {
   MainContainer,
+  Grid,
   HeaderContainer,
   Logo,
   ArrowRight,
