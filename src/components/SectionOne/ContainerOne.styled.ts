@@ -86,7 +86,7 @@ export const RightCar = styled.img`
   width: clamp(35%, 40%, 45%);
 
   @media only screen and (max-width: 1525px) {
-    margin: 14% 0 0 50%;
+    margin: 14% 0 0 45%;
     width: clamp(25%, 55%, 55%);
   }
 `

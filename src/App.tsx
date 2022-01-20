@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components"
 import GlobalStyles from "./components/styles/Global"
 import SectionOne from "./components/SectionOne/SectionOne"
 import SectionTwo from "./components/SectionTwo/SectionTwo"
-import { MainContainer } from "./components/styles/Container.styled"
+import { Container } from "./components/styles/Container.styled"
 
 const theme = {
   colors: {
@@ -20,11 +20,11 @@ const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <MainContainer>
-        <GlobalStyles />
-        <SectionOne />
+      <GlobalStyles />
+      <SectionOne />
+      <Container>
         <SectionTwo />
-      </MainContainer>
+      </Container>
     </ThemeProvider>
   )
 }
