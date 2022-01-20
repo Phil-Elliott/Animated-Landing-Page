@@ -89,7 +89,7 @@ export const InfoRight = styled.div`
 
   & p {
     font-size: 16px;
-    line-height: 170%;
+    line-height: 26px;
     max-width: 75%;
     padding-top: 4%;
   }

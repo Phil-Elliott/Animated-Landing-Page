@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components"
 import GlobalStyles from "./components/styles/Global"
 import SectionOne from "./components/SectionOne/SectionOne"
 import SectionTwo from "./components/SectionTwo/SectionTwo"
+import SectionThree from "./components/SectionThree/SectionThree"
 import { Container } from "./components/styles/Container.styled"
 
 const theme = {
@@ -24,6 +25,7 @@ function App() {
       <SectionOne />
       <Container>
         <SectionTwo />
+        <SectionThree />
       </Container>
     </ThemeProvider>
   )
