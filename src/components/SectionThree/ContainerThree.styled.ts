@@ -84,8 +84,8 @@ export const Shadow = styled.img`
   opacity: 1;
   position: absolute;
   z-index: 1;
-  display: none;
-  width: 100%;
+  width: 70.75%;
+  margin: -12% 0 0 18%;
 `
 
 export const CarContainerThree = styled.div`
