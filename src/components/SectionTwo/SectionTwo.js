@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import {
   ContainerTwo,
   CarInfo,
@@ -15,10 +15,20 @@ import {
   Car1,
   Car2,
 } from "./ContainerTwo.styled"
-import { Flex } from "./../styles/Flex.styled"
+import { Flex } from "../styles/Flex.styled"
+import { gsap } from "gsap"
 
 const SectionTwo = () => {
   const [car, setCar] = useState(0)
+  const carRef = useRef()
+
+  useEffect(() => {
+    gsap.from(carRef.current, {
+      duration: 0.5,
+      opacity: 0,
+      x: "40%",
+    })
+  }, [car])
 
   const dataArr = [
     {
@@ -42,7 +52,7 @@ const SectionTwo = () => {
   }
 
   return (
-    <ContainerTwo>
+    <ContainerTwo id="container">
       <CarInfo>
         <div>
           <Flex>
@@ -87,9 +97,17 @@ const SectionTwo = () => {
       </InfoRight>
       <CarContainerTwo>
         {car === 0 ? (
-          <Car1 src="./images/Section-Two/range-rover.svg" alt="range rover" />
+          <Car1
+            ref={carRef}
+            src="./images/Section-Two/range-rover.svg"
+            alt="range rover"
+          />
         ) : (
-          <Car2 src="./images/Section-Two/porsche-model.svg" alt="porsche" />
+          <Car2
+            ref={carRef}
+            src="./images/Section-Two/porsche-model.svg"
+            alt="porsche"
+          />
         )}
       </CarContainerTwo>
     </ContainerTwo>

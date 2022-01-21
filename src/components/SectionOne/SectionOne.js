@@ -15,11 +15,25 @@ import {
   RightCar,
   CenterCar,
 } from "./ContainerOne.styled"
+import { gsap } from "gsap"
 
 const SectionOne = () => {
+  const boxRef = useRef()
+  const infoRef = useRef()
+  const phoneRef = useRef()
+  const tl = useRef()
+
+  useEffect(() => {
+    tl.current = gsap
+      .timeline()
+      .from(boxRef.current, { duration: 0.5, x: "-100%" })
+      .from(infoRef.current, { duration: 0.5, delay: 0.25, y: "-200%" })
+      .from(phoneRef.current, { duration: 0.5, delay: 0.25, x: "500%" })
+  }, [])
+
   return (
-    <MainContainer>
-      <Container>
+    <MainContainer ref={boxRef}>
+      <Container ref={infoRef}>
         <Logo src="./images/Section-One/logo.svg" alt="Logo" />
         <Grid>
           <HeaderContainer>
@@ -29,7 +43,7 @@ const SectionOne = () => {
               <ArrowRight src="./images/arrow-right.svg" alt="Right-Arrow" />
             </Flex>
           </HeaderContainer>
-          <PhoneContainer>
+          <PhoneContainer ref={phoneRef}>
             <Phone src="./images/Section-One/phone.svg" alt="Phone" />
             <Shadow src="./images/Section-One/Shadow1.svg" alt="Phone Shadow" />
           </PhoneContainer>
