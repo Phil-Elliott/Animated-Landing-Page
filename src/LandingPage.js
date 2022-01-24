@@ -1,4 +1,3 @@
-import React from "react"
 import { ThemeProvider } from "styled-components"
 import GlobalStyles from "./components/styles/Global"
 import SectionOne from "./components/SectionOne/SectionOne"
@@ -22,7 +21,7 @@ const theme = {
   },
 }
 
-function App() {
+const LandingPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -39,4 +38,4 @@ function App() {
   )
 }
 
-export default App
+export default LandingPage
